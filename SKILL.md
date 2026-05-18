@@ -61,7 +61,7 @@ If you cannot verify the publication date, drop the item.
 
 ## Link integrity
 
-Every `Link to discussion:` URL must point to the **specific** article, forum thread, tweet, or post — never a homepage, category page, search-result page, or aggregator summary. If still unavailable after a follow-up search, drop the item.
+Every link URL must point to the **specific** article, forum thread, tweet, or post — never a homepage, category page, search-result page, or aggregator summary. If still unavailable after a follow-up search, drop the item.
 
 ## Output format
 
@@ -71,19 +71,35 @@ Output goes inside a fenced code block so the user can copy it cleanly:
 Yeelds — Daily Recap — DD Month
 
 1. [Punchy newsletter headline]
-Link to discussion: [URL]
+[Link label]: [URL]
 
 2. [Punchy newsletter headline]
-Link to discussion: [URL]
+[Link label]: [URL]
 ```
 
 - **Title line:** `Yeelds — Daily Recap — DD Month` (e.g. `18 May`). For weekly: `Yeelds — Weekly Recap — DD–DD Month` (e.g. `11–17 May`). Title dashes are em-dashes (U+2014 `—`). Date-range dash is an en-dash (U+2013 `–`).
 - **Numbered list:** `1. `, `2. `, … No bullets, no sub-bullets.
 - **Item line:** one punchy headline — see "Writing the headline" below.
-- **Link line:** literally `Link to discussion: ` followed by the URL, on its own line directly under the item.
+- **Link line:** the label must match the source type — see "Link labels" below.
 - **Blank line between items.**
 - **Plain text only.** No emojis, hashtags, @mentions, images, intro sentence, or sign-off. The title is the first line; the last item's link line is the last.
 - **Item count:** **minimum 5, target 5–7, cap at 8** per recap. If you can't surface 5 verified items, you haven't searched enough — run another sweep. See **Effort floor**.
+
+### Link labels
+
+The link label tells the reader what they're clicking into. Match the label to the source type:
+
+| Source type | Label |
+|---|---|
+| Third-party news article (CoinDesk, The Block, The Defiant, DL News, Decrypt, Bankless news, Blockworks, Unchained, Cointelegraph) | `Link to news:` |
+| Forum thread (governance.aave.com, forum.morpho.org, forum.sky.money, gov.curve.fi, etc.) | `Link to discussion:` |
+| First-party protocol blog post or docs update (blog.lido.fi, aave.com/blog, morpho.org/blog, ethena.fi/blog, docs.spark.fi, etc.) | `Link to announcement:` |
+| Tweet / X post (protocol account, founder, curator, analyst) | `Link to post:` |
+| Research piece / deep-dive (Re7 Substack, Steakhouse Financial, DeFi Saver newsletter, Bankless explainers, Block Analitica, Substacks) | `Link to research:` |
+| Incident post-mortem (Rekt News, official protocol post-mortems) | `Link to post-mortem:` |
+| Vote portal (vote.sky.money, Snapshot, Tally) | `Link to vote:` |
+
+When in doubt: forum thread → `discussion`, third-party journalism → `news`, first-party protocol communication → `announcement`, analyst commentary → `research`.
 
 After the code block you may add 1–2 short bullets noting what you dropped and why.
 
@@ -256,6 +272,7 @@ For "yesterday's recap" or "recap for 14 May": anchor recency to the specified d
 | Mistake | Fix |
 |---|---|
 | Headline opens with "News and commentary on…", "Reporting on…", "Report covering…", "Discussion on…", "Announcement of…", "Launch of…" | Rewrite subject-first with an active verb. See **Writing the headline**. |
+| Every item uses `Link to discussion:` regardless of source | Match the label to the source — `news` for journalism, `discussion` for forums, `announcement` for first-party blogs, `post` for tweets, `research` for analyst pieces, `post-mortem` for incident write-ups. See **Link labels**. |
 | URL ends in `/...` or matches a guessed slug | Drop the item. |
 | Item uses "huge", "massive", "exciting", "controversial" | Rewrite with specificity. Adjectives don't create interest; numbers and names do. |
 | Two items both about Aave governance | Pick the bigger one (daily) or bundle (weekly). |

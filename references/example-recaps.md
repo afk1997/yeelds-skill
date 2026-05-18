@@ -4,6 +4,8 @@ Three worked examples — two daily, one weekly. Illustrative, not real events.
 
 **Note on URLs:** Examples use `<full-thread-slug>`, `<post-slug>`, `<tweet-id>` as placeholders. **Real output must contain complete URLs verified from tool results** — never placeholders, never `...`, never homepage stubs, never reconstructed slugs.
 
+**Note on link labels:** Each item's link line uses a label matching the source type — `Link to discussion:` for forum threads, `Link to news:` for third-party journalism, `Link to announcement:` for first-party protocol blogs/docs, `Link to post:` for tweets, `Link to research:` for analyst pieces, `Link to post-mortem:` for incident write-ups, `Link to vote:` for vote portals.
+
 ---
 
 ## Example 1 — Data-fed mode, busy day
@@ -32,19 +34,19 @@ Link to discussion: https://forum.sky.money/t/<full-thread-slug>
 Link to discussion: https://governance.aave.com/t/<full-thread-slug>
 
 3. Pendle ships PT-sUSDe December 2026 market at ~18% implied APY
-Link to discussion: https://medium.com/pendle/<post-slug>
+Link to announcement: https://medium.com/pendle/<post-slug>
 
 4. Curve opens gauge vote for a new crvUSD pool
 Link to discussion: https://gov.curve.fi/t/<full-thread-slug>
 
 5. Base lending fork drained of $4.5M as Rekt publishes post-mortem
-Link to discussion: https://rekt.news/<post-slug>
+Link to post-mortem: https://rekt.news/<post-slug>
 
 6. Aerodrome adjusts epoch reward distribution across Slipstream pools
-Link to discussion: https://aerodrome.finance/blog/<post-slug>
+Link to announcement: https://aerodrome.finance/blog/<post-slug>
 
 7. DefiIgnas questions whether Hyperliquid's HLP can hold yields if perp volume normalises
-Link to discussion: https://x.com/DefiIgnas/status/<tweet-id>
+Link to post: https://x.com/DefiIgnas/status/<tweet-id>
 ```
 
 **Dropped:**
@@ -55,6 +57,7 @@ Notes on this example:
 - Each headline starts with the subject (`Sky`, `Aave's ACI`, `Pendle`, `Curve`, `Base lending fork`, `Aerodrome`, `DefiIgnas`) and has a concrete verb + detail.
 - Verbs vary across items: `raises`, `proposes`, `ships`, `opens`, `drained of`, `adjusts`, `questions`.
 - Numbers (`6% to 7.5%`, `25% LTV`, `$4.5M`, `~18% implied APY`) come straight from the source.
+- Five different link labels appear: `discussion`, `announcement`, `post-mortem`, `post` — each matched to the actual source type.
 
 ---
 
@@ -70,25 +73,26 @@ A "quiet day" is not a 2-item recap. Run a fresh sweep against the source list a
 Yeelds — Daily Recap — 18 May
 
 1. Frax updates sfrxUSD v2 docs with revised yield mechanics
-Link to discussion: https://docs.frax.finance/<docs-page>
+Link to announcement: https://docs.frax.finance/<docs-page>
 
 2. defi_made_here breaks down current stablecoin farm options and survival tactics
-Link to discussion: https://x.com/defi_made_here/status/<tweet-id>
+Link to post: https://x.com/defi_made_here/status/<tweet-id>
 
 3. Aave Risk Stewards tighten PT collateral parameters across V3 Ethereum and Plasma
 Link to discussion: https://governance.aave.com/t/<full-thread-slug>
 
 4. Re7 flags 2026 exploit run-rate dropping to ~1.5% of DeFi TVL from 7.2% in 2022
-Link to discussion: https://re7research.substack.com/p/<post-slug>
+Link to research: https://re7research.substack.com/p/<post-slug>
 
 5. Morpho lands stUSDS/USDS market enabling leveraged stUSDS positions
-Link to discussion: https://x.com/SkyEcosystem/status/<tweet-id>
+Link to post: https://x.com/SkyEcosystem/status/<tweet-id>
 ```
 
 **Notes:**
 - Two user-supplied items + three found via supplementation. Minimum 5 hit.
 - All five have varied subjects (Frax, defi_made_here, Aave Risk Stewards, Re7, Morpho) and varied verbs (`updates`, `breaks down`, `tighten`, `flags`, `lands`).
 - A 2-item recap was tempting here. The skill rules that out — always 5+.
+- Labels match source types: docs update → `announcement`, tweet → `post`, forum → `discussion`, Substack analysis → `research`.
 
 ---
 
@@ -108,22 +112,22 @@ Link to discussion: https://forum.sky.money/t/<full-thread-slug>
 Link to discussion: https://governance.aave.com/t/<full-thread-slug>
 
 3. Pendle ships two new PT markets — sUSDe Dec 2026 and an LBTC market on Ethereum mainnet
-Link to discussion: https://medium.com/pendle/<post-slug>
+Link to announcement: https://medium.com/pendle/<post-slug>
 
 4. Base lending forks drained of ~$7M across two exploits, one whitehat recovery
-Link to discussion: https://rekt.news/<post-slug>
+Link to post-mortem: https://rekt.news/<post-slug>
 
 5. Berachain BGT emissions distribution stabilises after initial gauge reshuffle
 Link to discussion: https://forum.berachain.com/t/<full-thread-slug>
 
 6. Steakhouse Financial breaks down stablecoin reserve composition across Maker, Frax, and Ethena
-Link to discussion: https://www.steakhouse.financial/research/<post-slug>
+Link to research: https://www.steakhouse.financial/research/<post-slug>
 
 7. Hyperliquid HLP yield sustainability debate intensifies as perp volume normalises
-Link to discussion: https://x.com/DefiIgnas/status/<tweet-id>
+Link to post: https://x.com/DefiIgnas/status/<tweet-id>
 
 8. Turtle Club adds three new partner protocols to points program
-Link to discussion: https://x.com/turtleclubhouse/status/<tweet-id>
+Link to post: https://x.com/turtleclubhouse/status/<tweet-id>
 ```
 
 **Notes:**
@@ -149,12 +153,19 @@ Rewrite as:
 
 ```
 1. Hyperliquid faces CFTC scrutiny as CME and ICE lobby for federal oversight
+Link to news: https://www.theblock.co/post/<id>/<slug>
+
 2. Tokenized ETFs cross $430M onchain, Ondo's IVVon leads with 150% monthly gain
+Link to news: https://thedefiant.io/converge/markets/<slug>
+
 3. DefiIgnas questions whether Hyperliquid HLP can sustain yields if perp volume normalises
+Link to post: https://x.com/DefiIgnas/status/<tweet-id>
+
 4. Pendle ships PT-sUSDe December 2026 market at ~18% implied APY
+Link to announcement: https://medium.com/pendle/<post-slug>
 ```
 
-Subject first. Active verb. Concrete number or angle. Always.
+Subject first. Active verb. Concrete number or angle. Link label that matches the source. Always.
 
 **Too hypey**
 
@@ -187,10 +198,18 @@ That's a paragraph. Cut to: *"Aave's ACI proposes onboarding sUSDe as collateral
 ```
 Items 2–4 are filler. Drop them; go find three more real items.
 
+**Wrong link label**
+
+```
+1. Pendle ships PT-sUSDe December 2026 market
+Link to discussion: https://medium.com/pendle/<post-slug>
+```
+Medium post = first-party protocol blog = `Link to announcement:`. Match the label to the source type.
+
 **Broken link (homepage substitute)**
 
 ```
 1. Pendle ships PT-sUSDe December 2026 market
-Link to discussion: https://app.pendle.finance/
+Link to announcement: https://app.pendle.finance/
 ```
 Homepage URL, not the specific announcement. Drop or find the real source.
